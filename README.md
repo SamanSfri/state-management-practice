@@ -22,5 +22,3 @@ The solution is built around the classic **State Pattern**:
 - **Easy Extensibility**: Adding a new state (e.g., `ErrorState`) requires only creating a new service and adding it to the registry.
 - **Type Safety**: Full TypeScript support with a defined `StateInterface` and `ButtonStateName` type.
 - **Dependency Injection**: Leverages Angular's DI system to manage state instances cleanly.
-
-## 📦 Project Structure
