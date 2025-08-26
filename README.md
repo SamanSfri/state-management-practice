@@ -1,59 +1,26 @@
-# StateManagementTest
+# Angular State Management Button
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+A clean, practical implementation of the **State Pattern** (a Gang of Four design pattern) in Angular to demonstrate finite state management for a UI component.
 
-## Development server
+## 🚀 Live Demo
 
-To start a local development server, run:
+[Add a link here if you have the app deployed on GitHub Pages, Vercel, Netlify, etc.]
 
-```bash
-ng serve
-```
+## 📖 Overview
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This project features a button component that cycles through three distinct states (`Idle`, `Loading`, `Success`), each with its own behavior, styling, and disabled status. It's a perfect example of how to decouple state-specific logic from the component itself, making the code more maintainable, scalable, and testable.
 
-## Code scaffolding
+## 🏗️ Architecture & Pattern: The State Pattern
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The solution is built around the classic **State Pattern**:
+- **`StateInterface`**: The contract that all states must implement (`getText`, `getDisabled`, `handleClicked`, `getColor`).
+- **Concrete States** (`IdleService`, `LoadingService`, `SuccessService`): Services that implement the interface, encapsulating the behavior for each state.
+- **Context** (`StateService` and `StateButtonComponent`): The `StateService` acts as a factory and registry for states, while the component holds the current state and delegates all UI logic to it.
 
-```bash
-ng generate component component-name
-```
+## ✨ Features
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Easy Extensibility**: Adding a new state (e.g., `ErrorState`) requires only creating a new service and adding it to the registry.
+- **Type Safety**: Full TypeScript support with a defined `StateInterface` and `ButtonStateName` type.
+- **Dependency Injection**: Leverages Angular's DI system to manage state instances cleanly.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Project Structure
